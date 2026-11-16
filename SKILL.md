@@ -35,6 +35,25 @@ Record the reporting currency, units (e.g. thousands or millions) and period end
 
 ## Step 4: Build the Trial Balance
 
+### Use the reference examples
+
+Before building, open the example Trial Balances in this skill's `references/` folder and model the output on them. List the folder each run, as examples may be added over time, and use whichever best matches the chosen format and the type of entity.
+
+Currently available:
+
+- `references/Example_TrialBalance_SingleColumn.xlsx`: a single-column TB (Debit positive, Credit negative) built from a set of annual accounts.
+
+Use the examples as a guide to:
+
+- **Layout**: header rows (entity, "Trial Balance", period end, currency/units), then the columns `Account`, `Type`, `Balance`, and a closing `Total` row that is 0.
+- **Account order**: assets first, then liabilities, equity, revenue and expenses.
+- **Granularity**: split headline lines into detailed accounts as the example does (for instance inventories into raw materials, work in progress, finished goods and goods in transit, and fixed assets into separate cost and accumulated depreciation accounts).
+- **Naming**: short, plain account names, with a `- at cost` / `- accumulated depreciation` style suffix for contra accounts.
+- **Equity and P&L**: opening retained earnings shown as its own account with the P&L accounts listed individually, not rolled into retained earnings.
+- **Rounding**: a visible `Rounding difference` account where the source accounts do not foot.
+
+Do not copy the example's account names or figures. They are only a model for structure and level of detail. Every figure in the new TB must come from the PDF. If no example exists for the chosen format (for example two columns), follow the closest example and let the script produce the Debit/Credit layout.
+
 Convert each line into a Trial Balance account:
 
 - **Debit-nature accounts**: assets, expenses and losses.
