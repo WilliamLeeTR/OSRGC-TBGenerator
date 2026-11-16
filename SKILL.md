@@ -74,7 +74,7 @@ Run it from this skill's folder:
 python scripts/build_tb.py input.json TrialBalance.xlsx
 ```
 
-Use an `.xlsx` or `.csv` output name.
+Use an `.xlsx` or `.csv` output name. Write the file to the outputs folder (`/mnt/user-data/outputs/`, for example `/mnt/user-data/outputs/TrialBalance.xlsx`) so it can be offered as a download card in Step 6. **Never write the deliverable to a scratchpad, temp or session working folder.** Files there cannot be turned into a download card. Scratch folders are fine only for the intermediate `input.json`. Name it after the entity and period where known (e.g. `ExampleLtd_TrialBalance_2025-12-31.xlsx`).
 
 The script checks that:
 
@@ -88,7 +88,9 @@ The script checks that:
 Once the script passes:
 
 1. Show the Trial Balance in the chat in the format chosen in Step 2, with a header (entity, period end, currency, units) and a totals row.
-2. Provide the .xlsx file the script wrote as a download. Offer a CSV as well if wanted.
+2. **Always present the file as a download card.** Call the file presentation tool (`present_files`) on the file the script wrote in the outputs folder, so the user gets a downloadable card. Do this on every run that passes the check, even if the table is already shown in the chat. Do not only mention the file path or paste a link.
+3. If the user asks for a CSV as well, re-run the script with a `.csv` output name and present that file as a second download card.
+4. The download card is the only delivery method. Do not hand over a scratchpad or session-folder path as a substitute. If the card cannot be produced, say so plainly and ask the user how to proceed. Never imply a download is available when it is not.
 
 **Single column**
 
