@@ -1,5 +1,5 @@
 ---
-name: tb-generator
+name: TB-Generator
 description: Reverse engineers a Trial Balance from an annual accounts PDF. Use when the user wants a Trial Balance built from financial statements, as one signed column or Debit/Credit columns.
 ---
 
